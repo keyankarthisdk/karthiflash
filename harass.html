@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Register</title>
+	<style>
+		legend{
+			text-align: center;
+			font-size: 50px;
+
+		}
+		li{
+
+			display:inline-block;
+		}
+		table{
+			font-size: 20px;
+
+		}
+	</style>
+</head>
+
+<body bgcolor=#ff6633>
+	<legend ><strong>Reporting harassement for sexual abuse</strong></legend>
+	<br>
+	<br>
+	<h2>Please send us details about the incident you would like to report. Our Complaint Center will analyze your complaint and take the appropriate measures.</h2>
+
+
+	<table>
+		<form action="regpost.php" method='POST'>
+			<table   align="center">
+				<!--<tr>
+					<td>
+						Date of complaint
+					</td>
+					<td>
+						<input type="date" name="complaint">
+					</td>
+				</tr>-->
+
+				<tr>
+					<td>Name</td>
+					<td><input type="text" placeholder ="First" name="name1">
+					<input type="text" placeholder="Last" name="name2">
+					</td>
+				</tr>
+				<tr>
+					<td>Gender</td>
+					<td>
+						<!-- <input type="radio" name="Gender" value=male>Male -->
+						<input type="radio" name="Gender" value=Female>Female
+						<input type="radio" name="Gender" value=Other>Other
+					</td>
+				</tr>
+				<tr>
+					<td>
+						DOB
+					</td>
+					<td><input type="date" name="date"></td>
+					
+				</tr>
+				<tr>
+					<td>
+						Upload Image(Optional)
+					</td>
+					<td><input type="file"  size="25" accept="Image/*" name="Upload">
+					
+				</tr>	
+
+				
+				<tr>
+					<td>
+						Email
+					</td>
+					<td>
+						<input type="Email" name="Email">
+					</td>
+				</tr>
+				<tr>
+					<td>
+						Date of reported incident
+					</td>
+					<td><input type="date" name="incident_date"></td>
+					
+				</tr>
+				<tr>
+					<td>
+						Incident Location
+					</td>
+					<td>
+						<input type="text" placeholder="location" name="location">
+					</td>
+				</tr>
+				<tr>
+					<td>
+						Is person known ?
+
+					</td>
+					<td><input type="radio" name="yes" value="yes">yes
+					<input type="radio" name="no" value="no">no</td>
+				</tr>						
+				<tr>
+					<td>
+						Complaint Details
+					</td>
+					<td>
+						<textarea name="complaint details" cols="40" rows="5"></textarea>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						Injured or not?
+						<br> Please explain
+					</td>
+					<td>
+						<textarea name="desired outcome" cols="40" rows="5"></textarea>
+					</td>
+				</tr>
+				<!--<tr>
+					<td>
+						
+					</td>
+					<td>Suggest the steps that should be taken to avoid a repeat of the problem
+						.
+					</td>
+				</tr>-->
+				<tr>
+					<td><br></td>
+					<td><br></td>
+				</tr>
+				<tr>
+					<td>&emsp;&emsp;<input type="submit" name="submit" value="Submit"></td>
+					<td>&emsp;&emsp;<input type="reset" name="reset"></td>
+				</tr>
+
+					
+				</table>
+			
+		</form>
+		
+	</table>
+
+
+</body>
+</html>

@@ -34,10 +34,13 @@
 	  	
 
 	  }
+	  .flash{
+	  	text-align: center;
+	  }
 
 	  body{
 	  	/*background:url({{ url_for('static', filename='images/download.jpg') }})*/
-	  	background:url('/static/images/download.jpg');
+		  	background:url('/static/images/download.jpg');
 	  }
 	  .form-group label{
 	  	/*border: 2px solid red;*/
@@ -105,7 +108,7 @@
 					</td>
 				</tr>
 				<tr>
-					<td>Gender</td>
+					<td class="LabelClass">Gender</td>
 					<td>
 						<input type="radio" name="Gender" value=male>Male
 						<input type="radio" name="Gender" value=Female>Female
@@ -194,5 +197,7 @@
 
 
 </body>
-
+<div class="flash">
+    <a  class="LabelClass" href="/home" >Home</a>
+</div>
 </html>

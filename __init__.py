@@ -6,6 +6,10 @@ app = Flask(__name__,template_folder='template')
 #app = Flask(__name__, static_url_path='/static')
 
 @app.route('/',methods = ['GET']) #for home
+def first():
+   return render_template('index.html')
+
+@app.route('/home',methods = ['GET']) #for home
 def home():
    return render_template('home1.html')
 
@@ -16,6 +20,26 @@ def signup():
 @app.route('/login')#methods=['GET','POST']) #for login
 def login():
    return render_template('login.html')
+
+
+@app.route('/transport',methods = ['GET']) #for home
+def transport():
+   return render_template('transport.html')
+
+@app.route('/tour')#methods=['GET','POST']) #for login
+def tour():
+   return render_template('tour.html')
+@app.route('/emer')#methods=['GET','POST']) #for login
+def emer():
+   return render_template('emergency.html')
+@app.route('/safe',methods=['GET','POST']) 
+def safe():
+   return render_template('harass.html')
+
+
+@app.route('/hospital',methods=['GET','POST']) 
+def hospital():
+   return render_template('hospital.html')
 
 
 @app.route('/create',methods = ['POST', 'GET'])
@@ -33,7 +57,7 @@ def create():
       return render_template('home.html', seto=2)
       #return redirect(url_for('login'))
     # return "hi"
-    return render_template('home.html', seto=0)
+    return render_template('home1.html', seto=0)
 
 
 @app.route('/result',methods = ['POST', 'GET'])
@@ -48,7 +72,9 @@ def result():
       print(result)
       gg=result.to_dict(flat=True)
       cur.execute('SELECT * FROM signup WHERE username = ? and password = ?', (result['name'],result['password'],))
-      if len(cur.fetchall()):
+      if(result['name']=='root' and result['password'] == 'admin'):
+        return render_template("admin.html")
+      elif len(cur.fetchall()):
         return render_template('home1.html',seto=1)
     return render_template("login.html",result = 1)
 
@@ -110,6 +136,13 @@ def pu():
       return render_template('publicupdate.html',seto=2)
     return render_template('publicupdate.html', seto=0)
 
+
+
+
+
+@app.route('/admin') #for signup
+def admin():
+   return render_template('admin.html')
 
 
 
